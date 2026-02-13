@@ -5,7 +5,7 @@ function createHeart() {
   const heart = document.createElement("span");
   heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+  heart.style.animationDuration = 4 + Math.random() * 3 + "s";
 
   heartsContainer.appendChild(heart);
 
@@ -27,16 +27,49 @@ const valentineMessage = document.getElementById("valentineMessage");
 const questions = [
   {
     question: "How much do you love me?",
-    options: ["A lot 💖", "More than stars ✨", "Infinitely ♾️"]
+    options: ["A lot 💖", "More than stars ✨", "Infinitely ♾️"],
   },
   {
     question: "What's your favorite thing about me?",
-    options: ["Your smile 😄", "Your hugs 🤗", "Your love 💕"]
+    options: ["My smile 😄", "My hugs 🤗", " Me😚💕"],
+  },
+  {
+    question: "How much do you love me?",
+    options: ["A lot 💖", "More than stars ✨", "Infinitely ♾️"],
+  },
+  {
+    question: "What's your favorite thing about me?",
+    options: ["Your smile 😄", "Your hugs 🤗", "Your love 💕"],
+  },
+  {
+    question: "When did we meet for the first time? 📅",
+    options: [
+      "18th may 2024✨",
+      "19th may 2024💖",
+      "20th may 2024💕",
+    ],
+  },
+  {
+    question: "When did we click our first photo together? 📸",
+    options: [
+      "18th may 2024,3:45✨",
+      "19th may 2024,3:45💖",
+      "19th may 2024,12:00💕",
+    ],
+  },
+  {
+    question: "When did we do our first kiss? 💋",
+    options: [
+      "10th june 2024🦋",
+      "11th june 2024⏳",
+      "12th june 2024💘",
+      "let's find to gether😚",
+    ],
   },
   {
     question: "Will you be my Valentine?",
-    options: ["Yes 💖", "No 😢"]
-  }
+    options: ["Yes 💖", "No 😌"],
+  },
 ];
 
 let currentQuestion = 0;
@@ -51,7 +84,7 @@ function showQuestion(index) {
   questionText.innerText = q.question;
   optionsContainer.innerHTML = "";
 
-  q.options.forEach(option => {
+  q.options.forEach((option) => {
     const btn = document.createElement("button");
     btn.innerText = option;
 
@@ -85,5 +118,3 @@ function nextQuestion() {
     valentineMessage.style.display = "block";
   }
 }
-
-
